@@ -1,0 +1,11 @@
+type Query {
+  _: String
+}
+
+type Mutation {
+  _: String
+}
+
+type Error {
+  message: String!
+}

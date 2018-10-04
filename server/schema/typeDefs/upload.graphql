@@ -1,0 +1,26 @@
+type File {
+  filename: String!
+  mimetype: String!
+  path: String!
+}
+
+type SingleUploadResponse {
+  ok: Boolean!
+  error: Error
+  file: File
+}
+
+type MultipleUploadResponse {
+  ok: Boolean!
+  error: Error
+  files: [File!]
+}
+
+extend type Query {
+  hello: String
+}
+
+extend type Mutation {
+  singleUpload(file: Upload!): SingleUploadResponse!
+  multipleUpload(files: [Upload!]!): MultipleUploadResponse!
+}
